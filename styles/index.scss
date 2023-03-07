@@ -22,7 +22,6 @@ body {
     --grey: #333333;
     --sunset: linear-gradient(to bottom, #FFB347, #FFA347, #FF9347, #FF7F47, #FF6B47, #FF7F47, #FF9347, #FFA347, #FFB347);
     --blue-sky: linear-gradient(to bottom, #66CCFF, #66BFFF, #66B3FF, #6699FF, #6677FF, #6699FF, #66B3FF, #66BFFF, #66CCFF);
-
 }
 
 section {
@@ -57,6 +56,7 @@ nav ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-family: 'Aleo';
 }
 
 nav ul a {
@@ -66,16 +66,15 @@ nav ul a {
 }
 
 nav ul a:hover {
-    color: var(--grey);
+    color: #FFA347;
 }
-
-
 
 .standard-btn {
     width: 14.25em;
     height: 3.9375em;
     background-image: linear-gradient(to bottom left, #5474FD 40%, #496BFE 40%);
 
+    font-family: 'Aleo';
     color: white;
     border: none;
 }
@@ -86,6 +85,11 @@ nav ul a:hover {
 
 .standard-btn:active {
     transform: scale(0.97);
+}
+
+.mobile-menu {
+    display: none;
+    transition: all 1s ease;
 }
 
 /* ------------------------------SECTION 1-------------------------- */
@@ -156,6 +160,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Aleo';
 }
 
 .search-btn:hover {
@@ -202,6 +207,7 @@ input:focus {
 
 .s2-text-container h2 {
     font-size: 2.25em;
+    font-family: 'Aleo';
 }
 
 .s2-text-container p {
@@ -375,6 +381,7 @@ input:focus {
 .s5-content-container h2 {
     font-size: 2.25em;
     margin-bottom: 2em;
+    font-family: 'Aleo';
 }
 
 .s5-image-quote-container h4 {
@@ -416,6 +423,10 @@ footer a:hover {
 
 .footer-icons i {
     padding: 0 0.3em 0 0.3em;
+}
+
+.mobile-menu-container {
+    display: none;
 }
 
 @media screen and (max-width: 1100px) {
@@ -488,7 +499,7 @@ footer a:hover {
 }
 
 .how-it-works-icons-container {
-    width: 90%;
+    width: 75%;
 }
 
 .how-it-works-icons-container i {
@@ -533,29 +544,20 @@ footer a:hover {
 
 /* ------------------------------SECTION 5-------------------------- */
 
-.s5-content-container {
-    background-image: none;
-    height: 70%;
-background-color: var(--grey);
-}
 
 .s5-image-quote-container {
     display: flex;
     flex-direction: row;
     background-color: var(--grey);
     max-width: 62.5em;
-    width: 100%;
+    width: 80%;
 }
 
 .s5-quote-container {
     display: flex;
     flex-direction: column;
-    padding: 0 1.5em 0 1.5em;
+    padding: 1.5em;
     line-height: 1.625em;
-}
-
-.s5-image-quote-container img{
-    display: none;
 }
 
 .s5-content-container h2 {
@@ -566,6 +568,77 @@ background-color: var(--grey);
 .s5-image-quote-container h4 {
     font-size: 1.1em;
 } 
+    /*---------------BURGER MENU----------------------*/
+
+    .menu-btn {
+        align-self: flex-end;
+        font-size: 4em;
+        color: white;
+        background: none;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .close-btn {
+        align-self: flex-end;
+        font-size: 4em;
+        color: white;
+        background: none;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 999;
+    }
+
+    .mobile-menu {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        justify-content: center;
+
+        ul {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 998;
+        }
+
+        li {
+            margin: 2em;
+            font-size: 1.5em;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:active {
+            color: #FF6B47;
+        }
+    }
+
+    .mobile-menu.visible {
+        display: flex;
+        background: var(--blue-sky);
+        width: 100%;
+      }
+
+    .close-btn.visable {
+        display: flex;
+    }
+
+    .mobile-menu-container {
+        display: flex;
+    }
 
 }
 
@@ -576,10 +649,33 @@ background-color: var(--grey);
         background: var(--blue-sky);
         background-size: 100% 100%;
     }
+
+    .how-it-works-icons-container {
+        width: 90%;
+    }
     
     .s3, .s4 {
         background-image: none;
         background: var(--sunset);
         background-size: 100% 100%;
+    }
+
+    .s5-content-container {
+        background-image: none;
+        height: 70%;
+        background-color: var(--grey);
+    }
+
+    .s5-image-quote-container {
+        width: 100%;
+    }
+
+    .s5-image-quote-container img{
+        display: none;
+    }
+
+    .s5-content-container h2 {
+        font-size: 1.8em;
+        margin-bottom: 0;
     }
 }
